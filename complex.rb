@@ -1,4 +1,6 @@
  class Comp
+	
+	attr_reader :x,:y
 
 	def initialize(x,y)
 		@x,@y=x,y
@@ -7,13 +9,16 @@
 	def +(other)
 		Comp.new(@x + other.x,@y + other.y)
 	end
+
 	def -(other)
 		Comp.new(@x - other.x,@y - other.y)
 	end
+
 	def *(other)
 		Comp.new(@x * other.x - @y * other.y,@x*other.y+@y*other.x)
-	end 
-def /(other)
+	end
+ 
+        def /(other)
 		Comp.new((@x * other.x + @y * other.y)/(other.x**2+other.y**2),(@y*other.x-@x*other.y)/other.x**2+other.y**2)
 	end                                     				
 		
